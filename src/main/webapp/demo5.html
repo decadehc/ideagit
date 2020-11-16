@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>v-on:事件修饰符</title>
+		<script src="js/vuejs-2.5.16.js"></script>
+	</head>
+
+
+	<body>
+		<div id="app">
+
+<!--			不让表单提交的操作  @submit.prevent-->
+			<form  @submit.prevent action="http://www.itheima.com" method="post" >
+				<input type="submit" value="提交">
+			</form>
+		
+		</div>
+	</body>
+
+	<script>
+		// view model
+        // 让上面的代码比较的好使 必须让vue接管代码区域
+		new Vue({
+			el:"#app",
+
+		});
+
+		//传统的js的提交的方式
+		function checkForm(){
+			alert(1);
+			// 表单必须有一个明显的返回值 也就是明确的boolean类型的返回值
+			// 在应用验证方法时必须加上 return 方法名称
+			return true ;
+		}
+
+	</script>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>v-text与v-html</title>
+		<script src="js/vuejs-2.5.16.js"></script>
+	</head>
+	<body>
+		<div id="app">
+<!--			不会解析html标签的作用-->
+			<div v-text="message"></div>
+<!--			会解析 html的标签的作用-->
+			<div v-html="message"></div>
+		</div>
+	</body>
+	<script>
+		//view model
+		new Vue({
+			el:"#app",
+			data:{
+				message :"<h1> hello vue </h1>" ,
+
+			}
+
+		})
+
+		//传统的js
+		window.onload = function () {
+				document.getElementById("div1").innerHTML = "<h1>Hello </h1>" ;
+				document.getElementById("div2").innerText = "<h1>Hello </h1>" ;
+		}
+	</script>
+</html>
